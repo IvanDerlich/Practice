@@ -1,3 +1,55 @@
 body{
   background-color: bisque;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  background-image: url(1.jpeg); 
+  background-color: brown;
+  height: 350px;
+  width: 80vw;  
+  background-size: cover;
+}
+
+.navigation{
+  align-self: center;
+  width: 10vw;  
+  padding:20px;
+}
+
+.thumbnails{
+  background-color: darkolivegreen;
+  height: 15vh;
+  display: flex;
+  justify-content: center;  
+}
+
+.thumbnail{
+  width: 100px;
+  height: 100px;
+  background-color: darkslateblue;
+  margin: 20px;
+  display: flex;
+  justify-content: center;  
+}
+
+.thumbnails *{
+  background-size: cover;
+}
+
+.one{
+  background-image: url(1.jpeg);  
+}
+.two{
+  background-image: url(2.jpeg);
+}
+.three{
+  background-image: url(3.jpeg);
+}
+.four{
+  background-image: url(4.jpeg);
+}
