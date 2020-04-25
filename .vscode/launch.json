@@ -1,0 +1,101 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [  
+
+
+
+
+
+        {
+            "name": "7.06 Simple_counting_sort",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/7.6 Simple counting sort.rb"
+        },
+        {
+            "name": "7.08 The Full Counting Sort",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/7.8 The Full Counting Sort.rb"
+        },
+        {
+            "name": "7.10 Simple Quick Sort.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/7.10 Simple Quick Sort.rb"
+        },        
+        {
+            "name": "7.11 Quicksort Advanced.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/7.11 Quicksort Advanced.rb"
+        },
+        {
+            "name": "8.2 Full Merge Sort",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/8.2 Full Merge Sort.rb"
+        },
+        {
+            "name": "8.3 Index Match.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/8.3 Index Match.rb"
+        },
+        {
+            "name": "10.1 Weighted Graphs",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/10.1 Weighted Graphs.rb"
+            
+        },
+        {
+            "name": "10.2 Shortest Path on a weighted Graph",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/Replit/10.2 Shortest Path on a weighted Graph.rb"            
+        },
+        {
+            "name": "01 Anagram",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/HackerRank/01 - Anagram.rb"            
+        }    ,
+        {
+            "name": "02 Palindrome Index",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/HackerRank/02 Palindrome Index.rb"            
+        }    ,
+        {
+            "name": "06_Insertion_Sort_ Part_1",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/HackerRank/06_Insertion_Sort_ Part_1.rb"            
+        }      ,
+        {
+            "name": "07_Insertion_Sort_ Part_2.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/HackerRank/07_Insertion_Sort_ Part_2.rb"            
+        }   
+        ,
+        {
+            "name": "01_Two_Sum.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/LeetCode/01_Two_Sum.rb"            
+        }  ,
+        {
+            "name": "03_Longest Substring Without Repeating Characters ",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/LeetCode/03_Longest Substring Without Repeating Characters.rb"            
+        }
+
+           
+    ]    
+}
