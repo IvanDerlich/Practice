@@ -66,6 +66,10 @@ git
 
       https://raw.githack.com/user/repo/branch/file
 
+      - Example:
+
+      raw.githack.com/IvanDerlich/Practice/template-javascript/src/index.html
+
 - Create a live version link publishing to github pages
 
       https://gist.github.com/IvanDerlich/9bef4a4a3f6d5cda37344e206f15573a
