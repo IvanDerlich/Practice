@@ -25,7 +25,7 @@ Different branches represents different practice projectsç
 - Install Sass
 
     npm install node-sass
-    
+
 - Optional: Improve the package.json with [this](https://gist.github.com/IvanDerlich/6d764da8a0723b1b845bb858dd59f458) gist
 
 
@@ -50,7 +50,7 @@ Different branches represents different practice projectsç
       npx node-sass src/styles/sass/style.scss -o src/styles --watch
 
 - How to open the website in the browser
-
+git
       xdg-open ./src/index.html
 
 - Run sass
