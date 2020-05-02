@@ -66,9 +66,15 @@ git
 
       https://raw.githack.com/user/repo/branch/file
 
-      - Example:
+    - Bad Example:
 
       raw.githack.com/IvanDerlich/Practice/template-javascript/src/index.html
+
+      It needs to have th https, otherwise it will not work (by april 2020)
+
+    - Good Example
+
+      https://raw.githack.com/IvanDerlich/Practice/template-javascript/src/index.html
 
 - Create a live version link publishing to github pages
 
