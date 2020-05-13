@@ -1,7 +1,3 @@
-# About
+https://jestjs.io/docs/en/getting-started.html#content
 
-This Repository contains small projects done for the purpose of practicing
-
-## Some projects
-
-[Animations](https://raw.githack.com/IvanDerlich/Practice/animations-box/src/index.html)
+https://jestjs.io/docs/en/using-matchers.html#content
