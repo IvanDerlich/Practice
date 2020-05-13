@@ -1,0 +1,22 @@
+{
+  "name": "testing-jest",
+  "version": "1.0.0",
+  "description": "This Repository contains small projects done for the purpose of practicing",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanDerlich/Practice.git"
+  },
+  "author": "Ivan Derlich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IvanDerlich/Practice/issues"
+  },
+  "homepage": "https://github.com/IvanDerlich/Practice#readme",
+  "dependencies": {
+    "jest": "^26.0.1"
+  }
+}
