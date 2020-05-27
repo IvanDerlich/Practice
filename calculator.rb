@@ -1,14 +1,14 @@
 class Calculator
-  def sum a,b
+  def addition a,b
     a + b
   end
-  def subs a,b
+  def substraction a,b
     a - b
   end
-  def mul a,b
+  def multiplication a,b
     a * b
   end
-  def div a,b
+  def division a,b
     return "Indeterminate" if b==0 && a==0
     return "Positive Infinity" if b == 0 && a > 0
     return "Negative Infinity" if b == 0 && a < 0

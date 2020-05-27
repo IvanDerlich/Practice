@@ -4,17 +4,17 @@ context "Calculator" do
   
   let(:calc){Calculator.new()} 
 
-  describe "Sum" do 
+  describe "Addition" do 
 
-    it "5+4 = 9" do
+    it "5 + 4 = 9" do
       expect(
-        calc.sum(4,5)
+        calc.addition(4,5)
       ).to be(9)         
     end
 
-    it "5+4 = 9" do
+    it "5 + 4 = 9" do
       expect(
-        calc.sum(4,5)
+        calc.addition(4,5)
       ).not_to be(10) 
     end
 
@@ -24,13 +24,13 @@ context "Calculator" do
 
     it "7 - 4" do
       expect(
-        calc.subs(7,4)
+        calc.substraction(7,4)
       ).to be(3) 
     end
 
     it "8 - 4" do
       expect(
-        calc.subs(8,4)
+        calc.substraction(8,4)
       ).not_to be(5) 
     end
     
@@ -40,53 +40,53 @@ context "Calculator" do
 
     it "3 * 5" do
       expect(
-        calc.mul(3,5)
+        calc.multiplication(3,5)
       ).to be(15)
     end
     
     it "3 * 5" do
       expect(
-        calc.mul(3,5)
+        calc.multiplication(3,5)
       ).not_to be(24)
     end
 
   end
 
-  describe "Div" do
+  describe "Division" do
 
-    it "6/3" do
+    it "6 / 3" do
       expect(
-        calc.div(6,3)
+        calc.division(6,3)
       ).to be(2.0)
     end
 
-    it "6/3" do
+    it "6 / 3" do
       expect(
-        calc.div(6,3)
+        calc.division(6,3)
       ).not_to be(55)
     end
 
-    it "7/2" do
+    it "7 / 2" do
       expect(
-        calc.div(7,2)
+        calc.division(7,2)
       ).to be(3.5)
     end
 
-    it "1/0", :focus do
+    it "1 / 0", :focus do
       expect(
-        calc.div(1,0)
+        calc.division(1,0)
       ).to eq('Positive Infinity')
     end
 
-    it "0/0" do
+    it "0 / 0" do
       expect(
-        calc.div(0,0)
+        calc.division(0,0)
       ).to eq('Indeterminate')
     end
     
-    it "-1/0" do
+    it "-1 / 0" do
       expect(
-        calc.div(-1,0)
+        calc.division(-1,0)
       ).to eq('Negative Infinity')
     end
 
