@@ -47,12 +47,12 @@ def advanced_quicksort(array, pivot_index = 0)
     # return ifr_index
     # </segment2> Two tests passed
 
-    p "-------iteration: " + i.to_s + "---------"
-    # p "ifr->" + ifr.to_s
-    p "ifr_index->" + ifr_index.to_s
-    # p "ifl->" + ifl.to_s
-    p "ifl_index->" + ifl_index.to_s
-    p "array.length: " + array.length.to_s
+    # p "-------iteration: " + i.to_s + "---------"
+    # # p "ifr->" + ifr.to_s
+    # p "ifr_index->" + ifr_index.to_s
+    # # p "ifl->" + ifl.to_s
+    # p "ifl_index->" + ifl_index.to_s
+    # p "array.length: " + array.length.to_s
 
     # <> swap items in the array
 
@@ -65,12 +65,7 @@ def advanced_quicksort(array, pivot_index = 0)
     break if array.length + ifr > ifl
     # break if i == 1
     i += 1
-    # <>
-
-
-    
-    
-      
+    # <>  
   end 
   return array
   # swap item from left with out pivot      
@@ -83,22 +78,17 @@ def advanced_quicksort(array, pivot_index = 0)
 
 end
 
-def simple_quicksort(array)
-  return array if array.length < 2
-  pivot = array[0]
-  left = []
-  right = []
-  array.each do |e|
-      unless e == pivot
-          if e > pivot
-          right << e            
-          else
-          left << e            
-          end
-      end
-  end    
-  array = simple_quicksort(left) + [pivot] + simple_quicksort(right)      
-end
+# <> Case 3
+array = [4, 1, 8, 2, 3, 6, 5, 9, 7]
+p advanced_quicksort(array, pivot_index = 3)
+
+[4, 1, 8, 2, 3, 6, 5, 9, 7]
+[4, 1, 8, 7, 3, 6, 5, 9, 2]
+[4, 1, 8, 7, 3, 6, 5, 9, 2]
+[3, 1, 8, 7, 4, 6, 5, 9, 2]
+p [1, 3, 8, 7, 4, 6, 5, 9, 2]
+
+# </> Case 3
 
 # array = [2,6,5,3,8,7,1,0]
 
@@ -117,7 +107,7 @@ end
 # p [2,6,5,3,0,7,1,8]
 # p "----"
 
-p "CASE 1"
+# p "CASE 1"
 
 # p "Find item from the left"
 # array = [2,6,5,3,8,7,1,0]
@@ -151,15 +141,15 @@ p "CASE 1"
 # # # p "Passed"
 # # # p "----"
 
-p "It should stop alone"
-array = [2,6,5,3,8,7,1,0]
-# # p array
-p advanced_quicksort(array,3)
-p [2,1,0,5,8,7,6,3]
-# # p "Passed"
-# # p "----"
+# p "It should stop alone"
+# array = [2,6,5,3,8,7,1,0]
+# # # p array
+# p advanced_quicksort(array,3)
+# p [2,1,0,5,8,7,6,3]
+# # # p "Passed"
+# # # p "----"
 
-p "CASE 2"
+# p "CASE 2"
 
 # p "Find item from the left"
 # array = [9, 4, 3, 7, 5, 2, 8, 2	]
@@ -199,18 +189,34 @@ p "CASE 2"
 # # p "Passed"
 # # # p "----"
 
-p "It should stop alone"
-array = [9, 4, 3, 7, 5, 2, 8	]
-p advanced_quicksort(array,3)
+# p "It should stop alone"
+# array = [9, 4, 3, 7, 5, 2, 8	]
+# p advanced_quicksort(array,3)
 
-# [9, 4, 3, 8, 5, 2, 7]
-# [2, 4, 3, 8, 5, 9, 7]
-# [2, 4, 3, 5, 8, 9, 7]
+# # [9, 4, 3, 8, 5, 2, 7]
+# # [2, 4, 3, 8, 5, 9, 7]
+# # [2, 4, 3, 5, 8, 9, 7]
 
-# # pivot = 7
-# # ifl = 9
-# # ifr = 2
-p [2, 4, 3, 5, 8, 9, 7]
-# p "Passed"
-# # p "----"
+# # # pivot = 7
+# # # ifl = 9
+# # # ifr = 2
+# p [2, 4, 3, 5, 8, 9, 7]
+# # p "Passed"
+# # # p "----"
 
+def simple_quicksort(array)
+  return array if array.length < 2
+  pivot = array[0]
+  left = []
+  right = []
+  array.each do |e|
+      unless e == pivot
+          if e > pivot
+          right << e            
+          else
+          left << e            
+          end
+      end
+  end    
+  array = simple_quicksort(left) + [pivot] + simple_quicksort(right)      
+end
