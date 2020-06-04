@@ -18,41 +18,61 @@ def advanced_quicksort(array, pivot_index = 0)
   array[-1] = pivot
   
   # return array.length
-  # <segment1>  find ifr and its index
+  
+  i = 0
   ifl_index = 0
   ifl = 0
-  loop do        
-    ifl = array[ifl_index]
-    break if ifl > pivot
-    ifl_index += 1
-  end
-  # return ifl
-  # </segment1> Two tests passed
-  
-
-  # <segment2> ind ifl and its index
-  ifr_index = -1
+  ifr_index = -2
   ifr = 0
-  loop do        
-    ifr = array[ifr_index]
-    break if ifr < pivot
-    ifr_index -= 1
-  end
-  # return ifr
-  # </segment2> Two tests passed
-
-  aux = 
-  # swap items in the array
-
-
+  # </>
   loop do 
     
-    # f         
+    # <segment1>  find ifr and its index   
+    
+    loop do        
+      ifl = array[ifl_index]
+      break if ifl > pivot
+      ifl_index += 1
+    end
+    # return ifl_index
+    # </segment1> Two tests passed
 
-    # break if b < a
+
+    # <segment2> ind ifl and its index    
+    loop do        
+      ifr = array[ifr_index]
+      break if ifr < pivot
+      ifr_index -= 1
+    end
+    # return ifr_index
+    # </segment2> Two tests passed
+
+    p "-------iteration: " + i.to_s + "---------"
+    # p "ifr->" + ifr.to_s
+    p "ifr_index->" + ifr_index.to_s
+    # p "ifl->" + ifl.to_s
+    p "ifl_index->" + ifl_index.to_s
+    p "array.length: " + array.length.to_s
+
+    # <> swap items in the array
+
+    
+    aux = array[ifr_index]
+    array[ifr_index] = array[ifl_index]
+    array[ifl_index] = aux
+    
+    # <> Define a finishing condition for the loop before swaping
+    break if array.length + ifr > ifl
+    # break if i == 1
+    i += 1
+    # <>
+
+
+    
     
       
   end 
+  return array
   # swap item from left with out pivot      
 
   # </work1> Output the new form of the array before advancing to the next stage
@@ -97,7 +117,7 @@ end
 # p [2,6,5,3,0,7,1,8]
 # p "----"
 
-# CASE 1
+p "CASE 1"
 
 # p "Find item from the left"
 # array = [2,6,5,3,8,7,1,0]
@@ -112,10 +132,34 @@ end
 # p advanced_quicksort(array,3)
 # # [2, 6, 5, 0, 8, 7, 1, 3]
 # p 1
-# p ""
+# p "Passed"
 # p "----"
 
-# CASE 2
+# p "Swap Items"
+# array = [2,6,5,3,8,7,1,0]
+# p array
+# p advanced_quicksort(array,3)
+# p [2,1,5,0,8,7,6,3]
+# p "Passed"
+# p "----"
+
+# p "Second Iteration"
+#  array = [2,6,5,3,8,7,1,0]
+# # # p array
+# p advanced_quicksort(array,3)
+# p [2,1,0,5,8,7,6,3]
+# # # p "Passed"
+# # # p "----"
+
+p "It should stop alone"
+array = [2,6,5,3,8,7,1,0]
+# # p array
+p advanced_quicksort(array,3)
+p [2,1,0,5,8,7,6,3]
+# # p "Passed"
+# # p "----"
+
+p "CASE 2"
 
 # p "Find item from the left"
 # array = [9, 4, 3, 7, 5, 2, 8, 2	]
@@ -125,10 +169,48 @@ end
 # p "Passed"
 # p "----"
 
-# p "Find item from the right"
-# array = [9, 4, 3, 7, 5, 2, 8, 2	]
+# p "Swap Items"
+# array = [9, 4, 3, 7, 5, 2, 8	]
 # p advanced_quicksort(array,3)
-# # [9, 4, 3, 2, 5, 2, 8, 7	]
-# p 2
-# p ""
+
+# #  [9, 4, 3, 8, 5, 2, 7	]
+# #  [2, 4, 3, 8, 5, 9, 7	]
+
+# # [9, 4, 3, 8, 5, 2, 8, 7	]
+# # pivot = 7
+# # ifl = 9
+# # ifr = 2
+# p [2, 4, 3, 8, 5, 9, 7	]
+# p "Passed"
 # p "----"
+
+# # p "Second Iteration"
+#  array = [9, 4, 3, 7, 5, 2, 8	]
+#  p advanced_quicksort(array,3)
+
+# # [9, 4, 3, 8, 5, 2, 7]
+# # [2, 4, 3, 8, 5, 9, 7]
+# # [2, 4, 3, 5, 8, 9, 7]
+
+# # # pivot = 7
+# # # ifl = 9
+# # # ifr = 2
+# p [2, 4, 3, 5, 8, 9, 7]
+# # p "Passed"
+# # # p "----"
+
+p "It should stop alone"
+array = [9, 4, 3, 7, 5, 2, 8	]
+p advanced_quicksort(array,3)
+
+# [9, 4, 3, 8, 5, 2, 7]
+# [2, 4, 3, 8, 5, 9, 7]
+# [2, 4, 3, 5, 8, 9, 7]
+
+# # pivot = 7
+# # ifl = 9
+# # ifr = 2
+p [2, 4, 3, 5, 8, 9, 7]
+# p "Passed"
+# # p "----"
+
