@@ -2,33 +2,36 @@
 
 # https://www.youtube.com/watch?v=Hoixgm4-P4M
 
-def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_position = array.length - 1) 
+def advanced_quicksort(array, pivot_index = 0, begining_position = 0, ending_position = array.length - 1) 
 
-  p "begining_postition: " + begining_postition.to_s
-  p "pivot_index: " + pivot_index.to_s  
-  p "ending_position: " + ending_position.to_s
-  p "Received array"
-  p array
+
+  return array if ending_position - begining_position < 1
+
+  # p "begining_position: " + begining_position.to_s
+  # p "pivot_index: " + pivot_index.to_s  
+  # p "ending_position: " + ending_position.to_s
+  # p "Received array"
+  # p array
   # Definitions
   # ifl: item from left that is larger than the pivot and it's index          
   # a: index of item from left
   # ifr: item from right is smaller than the pivot and it's index          
   # b: index of item from right
 
-  return array if ending_position - begining_postition < 2
+  
 
   pivot = array[pivot_index]    
 
-  # swap the pivot with the element at the end of the array or the segment
+  
   array[pivot_index] = array[ending_position]
-  array[-1] = pivot
+  array[ending_position] = pivot
   # p "Sends pivot to the last position"
   # p array
   
   # return array.length
   
   i = 0
-  ifl_index = begining_postition
+  ifl_index = begining_position
   ifl = 0
   ifr_index = ending_position
   ifr = 0
@@ -36,12 +39,15 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
   loop do 
     
     # <segment1>  find ifr and its index   
-    break if ifl_index > ending_position - 2
-    break if ifr_index < begining_postition
+    # p "ifl_index: " + ifl_index.to_s
+    # p "ifr_index: " + ifr_index.to_s
+
+
+    break if ifl_index + 1 > ifr_index 
     
     loop do        
       ifl = array[ifl_index] 
-      puts "ifl_index: " + ifl_index.to_s
+      # puts "ifl_index: " + ifl_index.to_s
       break if ifl > pivot || ifl_index > ending_position - 1
       ifl_index += 1 
     end 
@@ -59,7 +65,7 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
       # p "ifr_index: " + ifr_index.to_s
       # p "pivot: " + pivot.to_s
       # p array      
-      break if ifr < pivot || ifr_index < begining_postition
+      break if ifr < pivot || ifr_index < begining_position
       ifr_index -= 1
     end
     # return ifr_index
@@ -101,7 +107,7 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
   # p "array.length: " + array.length.to_s
   
   # # swap item from left with out pivot before delivering the array  
-  array[-1] = array[ifr_index + 1]
+  array[ending_position] = array[ifr_index + 1]
   array[ifr_index + 1] = pivot
   #p array.length + ifr_index
 
@@ -111,11 +117,17 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
 
   partition_index = ifr_index + 1
 
-  p "Puts pivot back in place and sends it to recurse"  
-  p "partition_index->" + partition_index.to_s
-  p array
-  advanced_quicksort(array, begining_postition , begining_postition, partition_index -1) 
-  # advanced_quicksort(array, partition_index + 1, partition_index + 1, ending_position) 
+  # p "Puts pivot back in place and sends it to recurse"  
+  # p "partition_index->" + partition_index.to_s
+  # p array
+  advanced_quicksort(
+    array, begining_position ,
+    begining_position, 
+    partition_index -1) 
+  advanced_quicksort(
+    array, partition_index + 1, 
+    partition_index + 1, 
+    ending_position)
   # p "Result from recursion"
   # p array
 
@@ -133,18 +145,18 @@ array = [2,6,5,3,8,7,1,0]
 p "Input"
 p array
 p 'Result'
-advanced_quicksort(array,3)
+p advanced_quicksort(array,3)
 [2,1,0,5,8,7,6,3]
 [2,1,0,3,8,7,6,5]
 
 
 
-# p "-----Test 2------"
-# array = [9, 4, 3, 7, 5, 2, 8	]
-# p "Input"
-# p array
-# p 'Result'
-# p advanced_quicksort(array,3)
+p "-----Test 2------"
+array = [9, 4, 3, 7, 5, 2, 8	]
+p "Input"
+p array
+p 'Result'
+p advanced_quicksort(array,3)
 # [9, 4, 3, 8, 5, 2, 7]
 # [2, 4, 3, 8, 5, 9, 7]
 # [2, 4, 3, 6, 8, 9, 7]
@@ -152,14 +164,21 @@ advanced_quicksort(array,3)
 
 
 
-# p "------Test 3-----"
-# p "Input"
-# array = [4, 1, 8, 2, 3, 6, 5, 9, 7]
-# p array
-# p 'Result'
-# advanced_quicksort(array,3)
+p "------Test 3-----"
+p "Input"
+array = [4, 1, 8, 2, 3, 6, 5, 9, 7]
+p array
+p 'Result'
+p advanced_quicksort(array,3)
 
 # [4, 1, 8, 2, 3, 6, 5, 9, 7] # begining
 # [4, 1, 8, 7, 3, 6, 5, 9, 2]
 # [1, 4, 8, 7, 3, 6, 5, 9, 2]
 # p [1, 2, 8, 7, 3, 6, 5, 9, 4]
+
+p "------Test 4-----"
+p "Input"
+array = [3,36,18, 8]
+p array
+p 'Result'
+p advanced_quicksort(array,3)
