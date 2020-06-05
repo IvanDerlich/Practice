@@ -19,8 +19,8 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
 
   pivot = array[pivot_index]    
 
-  # swap the pivot with the element at the end of the array   
-  array[pivot_index] = array[-1]
+  # swap the pivot with the element at the end of the array or the segment
+  array[pivot_index] = array[ending_position]
   array[-1] = pivot
   # p "Sends pivot to the last position"
   # p array
@@ -36,13 +36,16 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
   loop do 
     
     # <segment1>  find ifr and its index   
-    
+    break if ifl_index > ending_position - 2
+    break if ifr_index < begining_postition
     
     loop do        
       ifl = array[ifl_index] 
-      break if ifl > pivot
-      ifl_index += 1
-    end
+      puts "ifl_index: " + ifl_index.to_s
+      break if ifl > pivot || ifl_index > ending_position - 1
+      ifl_index += 1 
+    end 
+
     # return ifl_index
     # </segment1> Two tests passed
 
@@ -53,10 +56,10 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
 
     loop do
       ifr = array[ifr_index]
-      p "ifr: " + ifr.to_s
-      p "pivot: " + pivot.to_s
-      p array      
-      break if ifr < pivot
+      # p "ifr_index: " + ifr_index.to_s
+      # p "pivot: " + pivot.to_s
+      # p array      
+      break if ifr < pivot || ifr_index < begining_postition
       ifr_index -= 1
     end
     # return ifr_index
@@ -83,9 +86,9 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
     # p "ifr_index -> " + ifr_index.to_s
     # p "ifl_index -> " + ifl_index.to_s
     # p "Iteration Nº -> " + i.to_s
-    p "end"
-    p pivot
-    p array
+    # p "end"
+    # p pivot
+    # p array
     # return array
     # <> Define a finishing condition for the loop before swaping
     # break if i == 1
@@ -112,9 +115,9 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
   p "partition_index->" + partition_index.to_s
   p array
   advanced_quicksort(array, begining_postition , begining_postition, partition_index -1) 
-  # advanced_quicksort(array, new_pivot_index + 1, new_pivot_index + 1, ending_position + 1) 
-  p "Result from recursion"
-  p array
+  # advanced_quicksort(array, partition_index + 1, partition_index + 1, ending_position) 
+  # p "Result from recursion"
+  # p array
 
   return array
   # </work1> Output the new form of the array before advancing to the next stage
@@ -125,27 +128,27 @@ def advanced_quicksort(array, pivot_index = 0, begining_postition = 0, ending_po
 
 end
 
-# p "-----Test 1------"
-# array = [2,6,5,3,8,7,1,0]
-# p "Input"
-# p array
-# p 'Result'
-# advanced_quicksort(array,3)
-# [2,1,0,5,8,7,6,3]
-# [2,1,0,3,8,7,6,5]
-
-
-
-p "-----Test 2------"
-array = [9, 4, 3, 7, 5, 2, 8	]
+p "-----Test 1------"
+array = [2,6,5,3,8,7,1,0]
 p "Input"
 p array
 p 'Result'
 advanced_quicksort(array,3)
-[9, 4, 3, 8, 5, 2, 7]
-[2, 4, 3, 8, 5, 9, 7]
-[2, 4, 3, 6, 8, 9, 7]
-p [2, 4, 3, 7, 8, 9, 6]
+[2,1,0,5,8,7,6,3]
+[2,1,0,3,8,7,6,5]
+
+
+
+# p "-----Test 2------"
+# array = [9, 4, 3, 7, 5, 2, 8	]
+# p "Input"
+# p array
+# p 'Result'
+# p advanced_quicksort(array,3)
+# [9, 4, 3, 8, 5, 2, 7]
+# [2, 4, 3, 8, 5, 9, 7]
+# [2, 4, 3, 6, 8, 9, 7]
+# [2, 4, 3, 7, 8, 9, 6]
 
 
 
