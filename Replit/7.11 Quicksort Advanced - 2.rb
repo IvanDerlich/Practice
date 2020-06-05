@@ -178,7 +178,24 @@ p advanced_quicksort(array,3)
 
 p "------Test 4-----"
 p "Input"
-array = [3,36,18, 8]
+array = [9, 8, 6, 7, 3, 5, 4, 1, 2]
 p array
 p 'Result'
 p advanced_quicksort(array,3)
+
+
+p "------Test 4-----"
+p "Input"
+array = [1, 3, 9, 8, 2, 7, 5]
+p array
+p 'Result'
+p advanced_quicksort(array,3)
+
+
+p "------Test 5-----"
+p "Input"
+array = [406, 157, 415, 318, 472, 46, 252, 187, 364, 481, 450, 90, 390, 35, 452, 74, 196, 312, 142, 160, 143, 220, 483, 392, 443, 488, 79, 234, 68, 150, 356, 496, 69, 88, 177, 12, 288, 120, 222, 270, 441, 422, 103, 321, 65, 316, 448, 331, 117, 183]
+p array
+p 'Result'
+p advanced_quicksort(array,3)
+
